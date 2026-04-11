@@ -1,4 +1,14 @@
 {
+  "name": "translation-json-tools",
+  "private": true,
+  "bin": {
+    "translation-tool": "bin/translation-tool.js"
+  },
+  "scripts": {
+    "translation-tool": "node bin/translation-tool.js",
+    "import:excel-to-json": "node bin/translation-tool.js import",
+    "export:json-to-excel": "node bin/translation-tool.js export"
+  },
   "dependencies": {
     "fs-extra": "^11.3.2",
     "path": "^0.12.7",

@@ -2,11 +2,13 @@ const path = require("path");
 
 function parseArgs(argv) {
   const args = {};
+  const positionals = [];
 
   for (let index = 0; index < argv.length; index += 1) {
     const token = argv[index];
 
     if (!token.startsWith("--")) {
+      positionals.push(token);
       continue;
     }
 
@@ -22,6 +24,7 @@ function parseArgs(argv) {
     index += 1;
   }
 
+  args._ = positionals;
   return args;
 }
 

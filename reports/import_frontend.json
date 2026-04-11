@@ -1,0 +1,166 @@
+{
+  "createdAt": "2026-04-11T17:10:39.031Z",
+  "options": {
+    "layout": "frontend",
+    "baseDir": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend",
+    "excelPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\output\\clientTranslations.xlsx",
+    "sourceLang": "en",
+    "targetLang": "am",
+    "reportPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\reports\\import_frontend.json",
+    "fileNameColumn": "Translation File Name",
+    "keyColumn": "Key",
+    "sourceTextColumn": "Source Translation",
+    "targetTextColumn": "Target Translation",
+    "fallbackToSource": true,
+    "overwriteExisting": true,
+    "applyMode": "missing-only",
+    "logLevel": "info"
+  },
+  "summary": {
+    "sourceFilesFound": 13,
+    "sheetsProcessed": 1,
+    "filesProcessed": 13,
+    "appliedFromSheet": 0,
+    "skippedAlreadyTranslated": 769,
+    "fallbackApplied": 0,
+    "missingWithoutFallback": 0,
+    "ignoredSheetRows": 0,
+    "sheetFilesMissingInSource": [
+      "Home"
+    ],
+    "sheetsMissingInWorkbook": []
+  },
+  "files": [
+    {
+      "sheetName": "FrontEnd",
+      "file": "accessManagement",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\accessManagement\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 47,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "analytics",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\analytics\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 38,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "auditLog",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\auditLog\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 105,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "common",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\common\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 27,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "footer",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\footer\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 7,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "form",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\form\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 37,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "profile",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\profile\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 46,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "report",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\report\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 240,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "reportTypeManagement",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\reportTypeManagement\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 12,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "signIn",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\signIn\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 52,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "statusDocument",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\statusDocument\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 49,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "topNavigation",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\topNavigation\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 18,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    },
+    {
+      "sheetName": "FrontEnd",
+      "file": "userManagement",
+      "targetPath": "D:\\Projects\\IreportEthiopia\\Translations requirement generation\\i18n_frontend\\userManagement\\am.json",
+      "appliedFromSheet": 0,
+      "skippedAlreadyTranslated": 91,
+      "fallbackApplied": 0,
+      "missingWithoutFallback": 0,
+      "ignoredSheetRows": 0
+    }
+  ],
+  "skippedFiles": []
+}

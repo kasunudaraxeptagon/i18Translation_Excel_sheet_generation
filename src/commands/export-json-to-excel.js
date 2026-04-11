@@ -69,6 +69,7 @@ function listSourceFiles(options) {
 function run(argv = process.argv.slice(2)) {
   const defaults = getDefaults();
   const args = parseArgs(argv);
+  const pos = args._ || [];
 
   if (args.help) {
     console.log("Usage: translation-tool export [--layout frontend|backend] [--baseDir <path>] [--sourceLang <code>] [--targetLang <code>] [--out <xlsx>] [--sheet <name>] [--fileNameColumn <name>] [--keyColumn <name>] [--sourceTextColumn <name>] [--targetTextColumn <name>] [--includeExistingTarget true|false] [--onlyMissingTarget true|false] [--logLevel error|warn|info|debug]");
@@ -76,19 +77,19 @@ function run(argv = process.argv.slice(2)) {
   }
 
   const options = {
-    layout: args.layout || defaults.layout,
-    baseDir: resolvePathFromCwd(args.baseDir || defaults.baseDir),
-    sourceLang: args.sourceLang || defaults.sourceLang,
-    targetLang: args.targetLang || defaults.targetLang,
-    outPath: resolvePathFromCwd(args.out || defaults.outPath),
-    sheetName: args.sheet || defaults.sheetName,
+    layout: args.layout || pos[0] || defaults.layout,
+    baseDir: resolvePathFromCwd(args.baseDir || pos[1] || defaults.baseDir),
+    sourceLang: args.sourceLang || pos[2] || defaults.sourceLang,
+    targetLang: args.targetLang || pos[3] || defaults.targetLang,
+    outPath: resolvePathFromCwd(args.out || pos[4] || defaults.outPath),
+    sheetName: args.sheet || pos[5] || defaults.sheetName,
     fileNameColumn: args.fileNameColumn || defaults.fileNameColumn,
     keyColumn: args.keyColumn || defaults.keyColumn,
     sourceTextColumn: args.sourceTextColumn || defaults.sourceTextColumn,
     targetTextColumn: args.targetTextColumn || defaults.targetTextColumn,
-    includeExistingTarget: toBoolean(args.includeExistingTarget, defaults.includeExistingTarget),
-    onlyMissingTarget: toBoolean(args.onlyMissingTarget, defaults.onlyMissingTarget),
-    logLevel: args.logLevel || defaults.logLevel,
+    onlyMissingTarget: toBoolean(args.onlyMissingTarget ?? pos[6], defaults.onlyMissingTarget),
+    includeExistingTarget: toBoolean(args.includeExistingTarget ?? pos[7], defaults.includeExistingTarget),
+    logLevel: args.logLevel || pos[8] || defaults.logLevel,
   };
 
   const logger = createLogger(options.logLevel);

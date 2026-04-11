@@ -13,6 +13,15 @@ You can run via:
 npm run translation-tool -- <command> [options]
 ```
 
+Important for npm argument forwarding:
+
+```bash
+npm run <script-name> -- <options>
+```
+
+If you omit the `--`, npm may print warnings and strip option names.  
+The CLI now tolerates this and still parses positional values, but the recommended form is to include `--`.
+
 Or directly:
 
 ```bash
@@ -83,6 +92,19 @@ Behavior:
 - only keys present in the Excel sheet are applied
 - existing values are replaced for those keys
 - keys not present in the sheet remain unchanged
+
+### Column header compatibility
+
+The importer auto-detects common header names, including:
+
+- source text: `Source Translation`, `Corrected English Translation`, `English Translation`
+- target text: `Target Translation`, `Amharic Translation`, `Spanish Translation`
+
+If your sheet uses different headers, pass them explicitly:
+
+```bash
+npm run import:excel-to-json -- --layout frontend --baseDir ./i18n_frontend --excel ./output/clientTranslations.xlsx --sheet FrontEnd --sourceLang en --targetLang am --applyMode missing-only --fileNameColumn "Translation File Name" --keyColumn "Key" --sourceTextColumn "Corrected English Translation" --targetTextColumn "Amharic Translation" --report ./reports/import_frontend.json --logLevel info
+```
 
 ## Layouts
 

@@ -89,14 +89,15 @@ function listSourceFiles(options) {
 
 function collectRowsFromSheet(sheet, options) {
   const rawRows = xlsx.utils.sheet_to_json(sheet, { defval: "" });
+  const columnMap = resolveColumnMap(rawRows, options);
   const rows = [];
   let carryFileName = "";
 
   for (const rawRow of rawRows) {
-    const fileNameCell = String(rawRow[options.fileNameColumn] || "").trim();
-    const key = String(rawRow[options.keyColumn] || "").trim();
-    const sourceText = normalizeText(rawRow[options.sourceTextColumn]);
-    const targetText = normalizeText(rawRow[options.targetTextColumn]);
+    const fileNameCell = String(rawRow[columnMap.fileNameColumn] || "").trim();
+    const key = String(rawRow[columnMap.keyColumn] || "").trim();
+    const sourceText = normalizeText(rawRow[columnMap.sourceTextColumn]);
+    const targetText = normalizeText(rawRow[columnMap.targetTextColumn]);
 
     if (fileNameCell) {
       carryFileName = fileNameCell;
@@ -116,7 +117,74 @@ function collectRowsFromSheet(sheet, options) {
     });
   }
 
-  return rows;
+  return {
+    rows,
+    rawRowsCount: rawRows.length,
+    columnMap,
+  };
+}
+
+function findFirstAvailableColumn(columns, candidates) {
+  for (const candidate of candidates) {
+    if (columns.includes(candidate)) {
+      return candidate;
+    }
+  }
+  return "";
+}
+
+function resolveColumnMap(rawRows, options) {
+  const availableColumns = new Set();
+  for (const row of rawRows) {
+    for (const key of Object.keys(row)) {
+      availableColumns.add(key);
+    }
+  }
+
+  const columns = Array.from(availableColumns);
+
+  const fileNameColumn = findFirstAvailableColumn(columns, [
+    options.fileNameColumn,
+    "Translation File Name",
+    "File Name",
+    "File",
+    "Directory",
+    "Module",
+  ]);
+
+  const keyColumn = findFirstAvailableColumn(columns, [
+    options.keyColumn,
+    "Key",
+    "Translation Key",
+    "I18n Key",
+  ]);
+
+  const sourceTextColumn = findFirstAvailableColumn(columns, [
+    options.sourceTextColumn,
+    "Source Translation",
+    "Corrected English Translation",
+    "English Translation",
+    "English",
+    "Source",
+  ]);
+
+  const targetTextColumn = findFirstAvailableColumn(columns, [
+    options.targetTextColumn,
+    "Target Translation",
+    "Amharic Translation",
+    "Spanish Translation",
+    "Translation",
+    "Translated Text",
+    "Value",
+  ]);
+
+  return {
+    fileNameColumn,
+    keyColumn,
+    sourceTextColumn,
+    targetTextColumn,
+    availableColumns: columns,
+  };
 }
 
 function buildCandidateMaps(rows) {
@@ -236,10 +304,30 @@ function applySheetOnlyMode(sourceJson, existingTargetJson, candidate, options, 
 }
 
 function processSheet(sheetName, sheet, sourceFiles, options, report, logger) {
-  const rows = collectRowsFromSheet(sheet, options);
+  const appliedBeforeSheet = report.summary.appliedFromSheet;
+  const extracted = collectRowsFromSheet(sheet, options);
+  const { rows, rawRowsCount, columnMap } = extracted;
   const candidatesByFile = buildCandidateMaps(rows);
 
-  logger.info("Processing sheet", { sheetName, rowCount: rows.length });
+  logger.info("Processing sheet", {
+    sheetName,
+    rawRowsCount,
+    parsedRowsCount: rows.length,
+    columns: {
+      fileNameColumn: columnMap.fileNameColumn,
+      keyColumn: columnMap.keyColumn,
+      sourceTextColumn: columnMap.sourceTextColumn,
+      targetTextColumn: columnMap.targetTextColumn,
+    },
+  });
+
+  if (!columnMap.fileNameColumn || !columnMap.keyColumn || !columnMap.targetTextColumn) {
+    logger.warn("Sheet is missing required columns for import", {
+      sheetName,
+      required: ["file name", "key", "target translation"],
+      availableColumns: columnMap.availableColumns,
+    });
+  }
 
   const sourceFileByName = new Map(sourceFiles.map((item) => [item.normalizedName, item]));
 
@@ -304,11 +392,27 @@ function processSheet(sheetName, sheet, sourceFiles, options, report, logger) {
       ...counters,
     });
   }
+
+  const appliedInSheet = report.summary.appliedFromSheet - appliedBeforeSheet;
+  if (rawRowsCount > 0 && appliedInSheet === 0) {
+    logger.warn("No translations were applied from sheet. Check target column/header mapping and file names.", {
+      sheetName,
+      targetTextColumnUsed: columnMap.targetTextColumn,
+      availableColumns: columnMap.availableColumns,
+    });
+  }
 }
 
 function run(argv = process.argv.slice(2)) {
   const defaults = getDefaults();
   const args = parseArgs(argv);
+  const pos = args._ || [];
+  const posHasFallback =
+    String(pos[7] || "").toLowerCase() === "true" ||
+    String(pos[7] || "").toLowerCase() === "false";
+  const posFallback = posHasFallback ? pos[7] : undefined;
+  const posReport = posHasFallback ? pos[8] : pos[7];
+  const posLogLevel = posHasFallback ? pos[9] : pos[8];
 
   if (args.help) {
     console.log("Usage: translation-tool import [--layout frontend|backend] [--baseDir <path>] [--excel <path>] [--sheet <name>] [--sheets <a,b>] [--sourceLang <code>] [--targetLang <code>] [--fileNameColumn <name>] [--keyColumn <name>] [--sourceTextColumn <name>] [--targetTextColumn <name>] [--applyMode missing-only|sheet-only|full] [--overwriteExisting true|false] [--fallbackToSource true|false] [--report <path>] [--logLevel error|warn|info|debug]");
@@ -316,20 +420,20 @@ function run(argv = process.argv.slice(2)) {
   }
 
   const options = {
-    layout: args.layout || defaults.layout,
-    baseDir: resolvePathFromCwd(args.baseDir || defaults.baseDir),
-    sourceLang: args.sourceLang || defaults.sourceLang,
-    targetLang: args.targetLang || defaults.targetLang,
-    excelPath: resolvePathFromCwd(args.excel || defaults.excelPath),
-    reportPath: resolvePathFromCwd(args.report || defaults.reportPath),
+    layout: args.layout || pos[0] || defaults.layout,
+    baseDir: resolvePathFromCwd(args.baseDir || pos[1] || defaults.baseDir),
+    excelPath: resolvePathFromCwd(args.excel || pos[2] || defaults.excelPath),
+    sourceLang: args.sourceLang || pos[4] || defaults.sourceLang,
+    targetLang: args.targetLang || pos[5] || defaults.targetLang,
+    reportPath: resolvePathFromCwd(args.report || posReport || defaults.reportPath),
     fileNameColumn: args.fileNameColumn || defaults.fileNameColumn,
     keyColumn: args.keyColumn || defaults.keyColumn,
     sourceTextColumn: args.sourceTextColumn || defaults.sourceTextColumn,
     targetTextColumn: args.targetTextColumn || defaults.targetTextColumn,
-    fallbackToSource: toBoolean(args.fallbackToSource, defaults.fallbackToSource),
+    fallbackToSource: toBoolean(args.fallbackToSource ?? posFallback, defaults.fallbackToSource),
     overwriteExisting: toBoolean(args.overwriteExisting, true),
-    applyMode: args.applyMode || defaults.applyMode,
-    logLevel: args.logLevel || defaults.logLevel,
+    applyMode: args.applyMode || pos[6] || defaults.applyMode,
+    logLevel: args.logLevel || posLogLevel || defaults.logLevel,
   };
 
   const logger = createLogger(options.logLevel);
@@ -366,8 +470,8 @@ function run(argv = process.argv.slice(2)) {
   const requestedSheets = toList(args.sheets);
   const selectedSheets = requestedSheets.length
     ? requestedSheets
-    : args.sheet
-      ? [args.sheet]
+    : (args.sheet || pos[3])
+      ? [args.sheet || pos[3]]
       : workbook.SheetNames;
 
   const report = {

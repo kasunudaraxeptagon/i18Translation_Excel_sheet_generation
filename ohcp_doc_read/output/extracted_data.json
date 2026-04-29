@@ -1,0 +1,589 @@
+{
+  "metadata": {
+    "reportCode": "SPSCA_FRU, No. 66 *Precios mayoristas representan ventas por primeros recibidores en el mercado a comerciantes minoristas u otros compradores para productos de buena calidad y condición, a no ser que sea indicado. Sistema de Información de Mercados de Productos Agrícolas de Honduras (SIMPAH) Producto Origen Tamaño Unidad de Venta Lempira Precios Rango Rango Moda Bajo Alto Bajo Alto Reporte diario de precios de venta al por mayor de frutas * Mercado Central Abastos de Sula San Pedro Sula, Cortés, Honduras Jueves, 16 de abril del 2026 __ Aguacate Hass México Mediano Caja plástica (6 kg) 370.00 380.00 370.00 370.00 Aguacate Hass México Pequeño Caja plástica (6 kg) 320.00 330.00 320.00 320.00 Banano maduro Guatemala Mediano Caja de cartón (40 lb) 220.00 240.00 220.00 220.00 Banano verde Guatemala Mediano Cien und (35 lb) 150.00 160.00 150.00 150.00 Ciruela turca Guatemala Mediano Cien und (7-8 lb) 70.00 70.00 Coco con agua Colon Mediano Cien und (450-500 lb) 1,400.00 1,400.00 Limón Persa Colon Mediano Cien und (20-25 lb) 350.00 400.00 350.00 350.00 Limón Persa El Progreso Mediano Cien und (20-25 lb) 350.00 400.00 350.00 350.00 Mango corazón verde Valle de Sula Mediano Cien und (40 lb) 350.00 350.00 Mango Haden maduro Valle de Sula Mediano Cien und (110-115 lb) 1,200.00 1,300.00 1,200.00 1,200.00 Mango Haden maduro Valle de Sula Mediano Cien und (110-115 lb) 700.00 700.00 Manzana Gala, CAT 1 Washington/E EUU Calibre 100 Caja de cartón (18 kg) 1,400.00 1,400.00 Manzana Golden Delicious, CAT Washington/E EUU Calibre 100 Caja de cartón (18 kg) 1,400.00 1,400.00 Manzana Granny Smith, CAT 1 Washington/E EUU Calibre 100 Caja de cartón (18 kg) 1,400.00 1,400.00 Manzana Red Delicious, CAT 1 Washington/E EUU Calibre 100 Caja de cartón (18 kg) 1,200.00 1,200.00 Manzana Red Delicious, CAT 1 Washington/E EUU Calibre 113 Caja de cartón (18 kg) 1,200.00 1,200.00 Manzana Red Delicious, CAT 1 Washington/E EUU Calibre 163 Caja de cartón (18 kg) 1,200.00 1,200.00 Manzana Red Delicious, CAT 1 Washington/E EUU Calibre 80 Caja de cartón (18 kg) 1,200.00 1,200.00 Manzana Red Delicious, CAT 1 Washington/E EUU Calibre 88 Caja de cartón (18 kg) 1,200.00 1,200.00 Maracuyá en pulpa Valle de Sula Sin tamaño Libra 25.00 25.00 Melón Cantaloupe tipo Harper Guatemala Grande Cien und (600 lb) 3,000.00 3,000.00 Melón Cantaloupe tipo Harper Guatemala Mediano Cien und (350 lb) 2,500.00 2,500.00 Melón Cantaloupe tipo Harper Guatemala Pequeño Cien und (250 lb) 2,000.00 2,000.00 SIMPAH, Edificio Secretaría de Agricultura y Ganadería (SAG). 2.º piso, Blvr. C.A., Ave. La FAO. Tegucigalpa, F.M., Honduras Tel: (504) 2235-8981, Fax: (504) 2235-8981. simpah@simpah.hn. www.simpah.hn Página de 2 1",
+    "date": {
+      "raw": "Jueves, 16 de abril del 2026",
+      "day": "16",
+      "month": "abril",
+      "year": "2026"
+    },
+    "exchangeRate": 26.5731
+  },
+  "products": [
+    {
+      "producto": "Aguacate Hass",
+      "origen": "México",
+      "tamaño": "Mediano",
+      "unidadVenta": "Caja plástica (6 kg)",
+      "rango": {
+        "bajo": 370,
+        "alto": 380
+      },
+      "rangoModa": {
+        "bajo": 370,
+        "alto": 370
+      }
+    },
+    {
+      "producto": "Aguacate Hass",
+      "origen": "México",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Caja plástica (6 kg)",
+      "rango": {
+        "bajo": 320,
+        "alto": 330
+      },
+      "rangoModa": {
+        "bajo": 320,
+        "alto": 320
+      }
+    },
+    {
+      "producto": "Banano maduro",
+      "origen": "Guatemala",
+      "tamaño": "Mediano",
+      "unidadVenta": "Caja de cartón (40 lb)",
+      "rango": {
+        "bajo": 220,
+        "alto": 240
+      },
+      "rangoModa": {
+        "bajo": 220,
+        "alto": 220
+      }
+    },
+    {
+      "producto": "Banano verde",
+      "origen": "Guatemala",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (35 lb)",
+      "rango": {
+        "bajo": 150,
+        "alto": 160
+      },
+      "rangoModa": {
+        "bajo": 150,
+        "alto": 150
+      }
+    },
+    {
+      "producto": "Ciruela turca",
+      "origen": "Guatemala",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (7-8 lb)",
+      "rango": {
+        "bajo": 70,
+        "alto": 70
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Coco con agua",
+      "origen": "Colon",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (450-500 lb)",
+      "rango": {
+        "bajo": 1400,
+        "alto": 1400
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Limón Persa",
+      "origen": "Colon",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (20-25 lb)",
+      "rango": {
+        "bajo": 350,
+        "alto": 400
+      },
+      "rangoModa": {
+        "bajo": 350,
+        "alto": 350
+      }
+    },
+    {
+      "producto": "Limón Persa",
+      "origen": "El Progreso",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (20-25 lb)",
+      "rango": {
+        "bajo": 350,
+        "alto": 400
+      },
+      "rangoModa": {
+        "bajo": 350,
+        "alto": 350
+      }
+    },
+    {
+      "producto": "Mango corazón verde",
+      "origen": "Valle de Sula",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (40 lb)",
+      "rango": {
+        "bajo": 350,
+        "alto": 350
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Mango Haden maduro",
+      "origen": "Valle de Sula",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (110-115 lb)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1300
+      },
+      "rangoModa": {
+        "bajo": 1200,
+        "alto": 1200
+      }
+    },
+    {
+      "producto": "Mango Haden maduro",
+      "origen": "Valle de Sula",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (110-115 lb)",
+      "rango": {
+        "bajo": 700,
+        "alto": 700
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Gala, CAT 1",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 100",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1400,
+        "alto": 1400
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Golden Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 100",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1400,
+        "alto": 1400
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Granny Smith,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 100",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1400,
+        "alto": 1400
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Red Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 100",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1200
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Red Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 113",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1200
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Red Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 163",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1200
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Red Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 80",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1200
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Manzana Red Delicious,",
+      "origen": "Washington/E",
+      "tamaño": "Calibre 88",
+      "unidadVenta": "Caja de cartón (18 kg)",
+      "rango": {
+        "bajo": 1200,
+        "alto": 1200
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Maracuyá en pulpa",
+      "origen": "Valle de Sula",
+      "tamaño": "Sin tamaño",
+      "unidadVenta": "Libra",
+      "rango": {
+        "bajo": 25,
+        "alto": 25
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Melón Cantaloupe tipo",
+      "origen": "Guatemala",
+      "tamaño": "Grande",
+      "unidadVenta": "Cien und (600 lb)",
+      "rango": {
+        "bajo": 3000,
+        "alto": 3000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Melón Cantaloupe tipo",
+      "origen": "Guatemala",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (350 lb)",
+      "rango": {
+        "bajo": 2500,
+        "alto": 2500
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Melón Cantaloupe tipo",
+      "origen": "Guatemala",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (250 lb)",
+      "rango": {
+        "bajo": 2000,
+        "alto": 2000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Mora",
+      "origen": "Belén Gualcho",
+      "tamaño": "Sin tamaño",
+      "unidadVenta": "Libra",
+      "rango": {
+        "bajo": 40,
+        "alto": 40
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Mora con agua",
+      "origen": "Belén Gualcho",
+      "tamaño": "Sin tamaño",
+      "unidadVenta": "Libra",
+      "rango": {
+        "bajo": 25,
+        "alto": 25
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Nance ácido",
+      "origen": "Tela",
+      "tamaño": "Mediano",
+      "unidadVenta": "Libra",
+      "rango": {
+        "bajo": 20,
+        "alto": 20
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Naranja Valencia",
+      "origen": "Sonaguera",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (45-50 lb)",
+      "rango": {
+        "bajo": 330,
+        "alto": 340
+      },
+      "rangoModa": {
+        "bajo": 330,
+        "alto": 330
+      }
+    },
+    {
+      "producto": "Naranja Valencia",
+      "origen": "Sonaguera",
+      "tamaño": "Mixto",
+      "unidadVenta": "Cien und (70-80 lb)",
+      "rango": {
+        "bajo": 440,
+        "alto": 440
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Papaya Maradol",
+      "origen": "Yoro",
+      "tamaño": "Grande",
+      "unidadVenta": "Docena (96 lb)",
+      "rango": {
+        "bajo": 340,
+        "alto": 350
+      },
+      "rangoModa": {
+        "bajo": 340,
+        "alto": 340
+      }
+    },
+    {
+      "producto": "Papaya Maradol",
+      "origen": "Yoro",
+      "tamaño": "Mediano",
+      "unidadVenta": "Docena (72 lb)",
+      "rango": {
+        "bajo": 240,
+        "alto": 250
+      },
+      "rangoModa": {
+        "bajo": 240,
+        "alto": 240
+      }
+    },
+    {
+      "producto": "Papaya Maradol",
+      "origen": "Yoro",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Docena (50-55 lb)",
+      "rango": {
+        "bajo": 140,
+        "alto": 140
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Piña Golden",
+      "origen": "Lago de Yojoa",
+      "tamaño": "Grande",
+      "unidadVenta": "Cien und (600 lb)",
+      "rango": {
+        "bajo": 4000,
+        "alto": 4000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Piña Golden",
+      "origen": "Lago de Yojoa",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (400 lb)",
+      "rango": {
+        "bajo": 3000,
+        "alto": 3000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Piña Golden",
+      "origen": "Lago de Yojoa",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (250 lb)",
+      "rango": {
+        "bajo": 2000,
+        "alto": 2000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Plátano maduro",
+      "origen": "Guatemala",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (50 lb)",
+      "rango": {
+        "bajo": 300,
+        "alto": 320
+      },
+      "rangoModa": {
+        "bajo": 300,
+        "alto": 300
+      }
+    },
+    {
+      "producto": "Plátano verde",
+      "origen": "Guatemala",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (52 lb)",
+      "rango": {
+        "bajo": 300,
+        "alto": 320
+      },
+      "rangoModa": {
+        "bajo": 300,
+        "alto": 300
+      }
+    },
+    {
+      "producto": "Sandía Mickey Lee",
+      "origen": "Yoro",
+      "tamaño": "Grande",
+      "unidadVenta": "Cien und (1,400-1,500 lb)",
+      "rango": {
+        "bajo": 6000,
+        "alto": 6000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Sandía Mickey Lee",
+      "origen": "Yoro",
+      "tamaño": "Mediano",
+      "unidadVenta": "Cien und (1,000-1,100 lb)",
+      "rango": {
+        "bajo": 5000,
+        "alto": 5000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Sandía Mickey Lee",
+      "origen": "Yoro",
+      "tamaño": "Pequeño",
+      "unidadVenta": "Cien und (600-800 lb)",
+      "rango": {
+        "bajo": 4000,
+        "alto": 4000
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Tamarindo sin cáscara",
+      "origen": "Choluteca",
+      "tamaño": "Sin tamaño",
+      "unidadVenta": "Libra",
+      "rango": {
+        "bajo": 30,
+        "alto": 30
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    },
+    {
+      "producto": "Uva Red Globe, CAT 1",
+      "origen": "Peru",
+      "tamaño": "Grande",
+      "unidadVenta": "Caja plástica (18 lb)",
+      "rango": {
+        "bajo": 1100,
+        "alto": 1100
+      },
+      "rangoModa": {
+        "bajo": null,
+        "alto": null
+      }
+    }
+  ],
+  "extractionQuality": "excellent"
+}
